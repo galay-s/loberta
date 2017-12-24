@@ -1,0 +1,34 @@
+{% extends 'links/base.html' %}
+{% load staticfiles %}
+{% block content %}
+ <h2>Links</h2>
+    <div>
+        <form method="post" action="{% url 'links' %}">
+            {% csrf_token %}
+            {{interval_form}}
+            {{interval_form.error_class}}
+            <input type="submit" value="Set">
+        </form>
+    </div>
+    <hr>
+    <div id="links">
+        {% include "links/links_table.html" %}
+    </div>
+
+{% endblock content %}
+
+
+
+{% block script %}
+<script>
+function get_links_statuses(){
+    $.get("{% url 'get_links_statuses' %}", function(data) {
+        $("#links").empty();  
+        $("#links").append(data);
+    });
+}
+
+get_links_statuses()
+id = setInterval(get_links_statuses, {{interval_form.value.value}} * 1000)
+</script>
+{% endblock script %}

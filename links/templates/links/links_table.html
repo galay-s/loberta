@@ -1,0 +1,29 @@
+<table>
+    <tr>
+        <td>Url</td>
+        <td>pause</td>
+    </tr>
+    {% for link, status_code in data %}
+    <tr id="{{ task.id }}">
+        {% if status_code == 200 %}
+            <td bgcolor="#00FF00">
+                <a href="{% url 'up_down_link' link_id=link.id %}">
+                    {{ link.url }}
+                </a>
+            </td>
+        {% else %}
+            <td bgcolor="#FF0000">
+                <a href="{% url 'up_down_link' link_id=link.id %}">
+                    {{ link.url }}
+                </a>
+            </td>
+        {% endif %}
+        <td>
+            {% if link.paused == True %}
+                <img class="img_producer_control" src="/static/admin/img/icon-no.svg" alt="False">
+            {% else %}
+                <img src="/static/links/img/icon-yes.svg" alt="True">
+            {% endif %}
+    </tr>
+    {% endfor %}
+</table>

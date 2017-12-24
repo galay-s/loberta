@@ -1,0 +1,68 @@
+[
+  {
+    "model": "links.interval",
+    "pk": 1,
+    "fields": {"value": 4}
+  },
+
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$100000$LdKGbGjLszjL$gWtgweplM3OBqCAeM0L5urxzuR+LllsF3VuQdFhfDPI=",
+      "is_superuser": true,
+      "username": "developer",
+      "is_staff": true,
+      "is_active": true
+    }
+  },
+
+  {
+    "model": "links.link",
+    "pk": 1,
+    "fields":
+      {
+        "url": "http://mail.ru",
+        "paused": false}
+  },
+
+  {
+    "model": "links.link",
+    "pk": 2,
+    "fields":
+      {
+        "url": "https://developer.mozilla.org",
+        "paused": false
+      }
+  },
+
+  {
+    "model": "links.link",
+    "pk": 3,
+    "fields":
+      {
+        "url": "http://bashorg.org/",
+        "paused": false
+      }
+  },
+
+  {
+    "model": "links.link",
+    "pk": 4,
+    "fields":
+      {
+        "url": "https://docs.microsoft.com",
+        "paused": false
+      }
+  },
+
+  {
+    "model": "links.link",
+    "pk": 5,
+    "fields":
+      {
+        "url": "https://xxxxxxxxxxxxxxxxxxxxxxxxxx.org",
+        "paused": false
+      }
+  }
+]

@@ -1,0 +1,33 @@
+Task:
+Implement Links Status Checker
+Django project git repository with applications code that:
+Allow store and manipulate with set of URL (stored in DB, using django ORM), manipulation (add/delete) via Django admin.
+Simple view for authenticated users, that shows list of urls, monitors url access status (using Ajax request to server), lets choose check interval, pause individual links check
+On ajax request, server should check (in async) all users links listed in db and return HTTP status code of urls (200 - green row in list, other - red row in list).
+
+
+Requirements:
+python3.5
+
+
+Instalation:
+pip install -r requirements.txt
+python manage.py migrate
+
+
+Run:
+python manage.py runserver
+
+
+Superuser credential:
+  - login: developer
+  - password: developer
+
+
+Url:
+http://127.0.0.1:8000/links/
+
+
+Common info:
+- For pause of url click on link
+- Must be Internet for external import jquery
